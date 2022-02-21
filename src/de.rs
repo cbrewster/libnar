@@ -345,7 +345,7 @@ impl<'a> Entry<'a> {
         };
 
         for component in path.components() {
-            if let Component::Prefix(_) | Component::RootDir | Component::ParentDir = component {
+            if let Component::Prefix(_) | Component::ParentDir = component {
                 let message = format!("Invalid path component in {:?}", path);
                 return Err(Error::new(ErrorKind::Other, message));
             }
